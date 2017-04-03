@@ -19,6 +19,16 @@
         }
     })
     
+    var TestService = Class({
+        constructor: function(){},
+        getRandomQuote: function(){
+            return {
+                "line" : 'Test quote',
+                "author" : 'Test author'
+            };
+        }
+    });
+    
     var SecondComponent = Component({
 //        meta dane
         selector: 'second',
@@ -46,7 +56,7 @@
 //        meta dane
         imports: [BrowserModule],
         declarations: [AppComponent, SecondComponent],
-        providers: [QuoteService],
+        providers: [{provide : QuoteService, useClass: TestService}],
         bootstrap: [AppComponent]
     })
     .Class({
