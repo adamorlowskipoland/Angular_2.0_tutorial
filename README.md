@@ -1,7 +1,18 @@
 # Angular_2.0_tutorial
 Angular 2.0 tutorial from: https://www.youtube.com/watch?v=kFxbIGQJFro
 
+02_projectAngular2
+Creating app from scratch. Building components, modules etc.
 
+
+
+
+
+
+
+
+
+Notes to 'projectAngular' folder
 1. installed node.js 
 2. intalled angular cli (commandLineInterface for angular) -->  npm install -g angular-cli enter
 3. made project by -->  ng new 'name of the project' enter
