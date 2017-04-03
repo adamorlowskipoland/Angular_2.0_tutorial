@@ -1,4 +1,4 @@
-(function(){
+(function (){
     
     var Component = ng.core.Component;
     var NgModule = ng.core.NgModule;
@@ -21,7 +21,7 @@
     
     var TestService = Class({
         constructor: function(){},
-        getRandomQuote: function(){
+        getRandomQuote: function() {
             return {
                 "line" : 'Test quote',
                 "author" : 'Test author'
@@ -56,7 +56,9 @@
 //        meta dane
         imports: [BrowserModule],
         declarations: [AppComponent, SecondComponent],
-        providers: [{provide : QuoteService, useClass: TestService}],
+        providers: [
+            {provide : QuoteService, useClass: QuoteService}
+        ],
         bootstrap: [AppComponent]
     })
     .Class({
