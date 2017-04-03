@@ -3,7 +3,7 @@
     
 //        meta dane 
         selector: 'my-app', 
-        template: '<h1>Angular 2.0 Hello World!!!</h2>'
+        template: '<h1>Angular 2.0 Hello World!!!</h1>'
     })
     .Class({
         constructor : function(){}
@@ -18,5 +18,8 @@
     .Class({
         constructor : function(){}
     })
+    
+    ng.platformBrowserDynamic.platformBrowserDynamic()
+        .bootstrapModule(AppModule);
     
 })();
