@@ -5,8 +5,9 @@
 
 
 <ul>
-    <li *ngFor="let todo of todos">
+    <li *ngFor="let todo of todos; let ind=index">
         <input type="checkbox" [(ngModel)]="todo.complete">
         <span>{{todo.title}}</span>
+        <span class="delete--icon" (click)="deleteTodo(ind)">[X]</span>
     </li>
 </ul>

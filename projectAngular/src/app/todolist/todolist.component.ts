@@ -31,6 +31,10 @@ export class TodolistComponent {
         
         this.newTodoTitle = '';
     }
+    
+    deleteTodo(index) {
+        this.todos.splice(index, 1);
+    }
 }
 
 interface Todo {
