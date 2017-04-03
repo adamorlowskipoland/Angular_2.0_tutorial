@@ -8,7 +8,7 @@
     
     
     var QuoteService = Class({
-        constructor : function(){
+        constructor : function QuoteService(){
             this.quotes = quotes;
         },
         
@@ -24,10 +24,9 @@
         template: '<p><em>{{quote.line}} </em>{{quote.author}}</p>'
     })
     .Class({
-        constructor : function(){
-            var quoteService = new QuoteService();
+        constructor : [QuoteService, function SecondComponent(quoteService){
             this.quote = quoteService.getRandomQuote();
-        }
+        }]
     });
     
     
@@ -38,7 +37,7 @@
                     <second></second>`
     })
     .Class({
-        constructor : function(){}
+        constructor : function AppComponent(){}
     });
     
     var AppModule = NgModule({
