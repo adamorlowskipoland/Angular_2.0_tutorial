@@ -7,6 +7,7 @@
     var Class = ng.core.Class;
     
     
+    
     var QuoteService = Class({
         constructor : function QuoteService(){
             this.quotes = quotes;
@@ -34,6 +35,7 @@
 //        meta dane 
         selector: 'my-app', 
         template: `<h1>Angular 2.0 Hello World!!!</h1>
+                    <second></second>
                     <second></second>`
     })
     .Class({
