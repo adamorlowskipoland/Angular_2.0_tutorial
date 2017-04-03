@@ -5,3 +5,7 @@ h2 {
 .delete--icon {
     cursor: pointer;
 }
+
+.checked {
+    text-decoration: line-through;
+}
