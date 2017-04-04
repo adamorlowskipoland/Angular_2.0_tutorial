@@ -1,13 +1,14 @@
 import {Quote} from './quote.model';
 export class QuoteService {
 
-  quotes : Quote[] = quotes2;
+  private quotes : Quote[] = quotes2;
 
-  getRandomQuote(): Quote {
+  private getRandomQuote(): Quote {
     const randomIndex = Math.floor(Math.random() * this.quotes.length);
     return this.quotes[randomIndex];
   }
 //  type of delay is now set to number not 'any' anymore and callback is a function with quote being type Quote - imported at the top
+//    this can also be declared as public but it is public by default so there is no need
   generateRandomQuotes(delay: number, callback:(quote: Quote) => void) {
     callback(this.getRandomQuote());
     setInterval(() => callback(this.getRandomQuote()), delay);
