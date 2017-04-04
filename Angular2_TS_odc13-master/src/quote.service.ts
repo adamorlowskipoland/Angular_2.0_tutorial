@@ -1,19 +1,20 @@
+import {Quote} from './quote.model';
 export class QuoteService {
 
-  quotes = quotes2;
+  quotes : Quote[] = quotes2;
 
-  getRandomQuote() {
+  getRandomQuote(): Quote {
     const randomIndex = Math.floor(Math.random() * this.quotes.length);
     return this.quotes[randomIndex];
   }
-
-  generateRandomQuotes(delay, callback) {
+//  type of delay is now set to number not 'any' anymore and callback is a function with quote being type Quote - imported at the top
+  generateRandomQuotes(delay: number, callback:(quote: Quote) => void) {
     callback(this.getRandomQuote());
     setInterval(() => callback(this.getRandomQuote()), delay);
   }
 }
 
-const quotes2 = [
+const quotes2 : Quote[] = [
   {
     "line": "Walking on water and developing software from a specification are easy if both are frozen.",
     "author": "Edward V Berard"

@@ -1,4 +1,5 @@
-import {Component, Inject} from '@angular/core';
+import {Component} from '@angular/core';
+import {Quote} from './quote.model';
 import {QuoteService} from './quote.service';
 
 @Component({
@@ -7,9 +8,17 @@ import {QuoteService} from './quote.service';
 })
 export class SecondComponent {
 
-  quote; 
+//    giving type
+//  quote: any;
+//    or just 
+//    quote;
+//    beacause it is 'any' in default
 
-  constructor( @Inject(QuoteService) quoteService) {
+//    quote: Quote; means it is now type Quote, imported at the top
+    quote: Quote;
+
+//          quoteService is QuoteService type
+  constructor( quoteService: QuoteService) {
     quoteService.generateRandomQuotes(2000, quote => this.quote = quote);
   }
 }
