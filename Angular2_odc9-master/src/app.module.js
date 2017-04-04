@@ -4,17 +4,22 @@
   var QuoteService = app.QuoteService;
   var SecondComponent = app.SecondComponent;
   var AppComponent = app.AppComponent;
+    
+    
+//    decorator
+    @NgModule({
+        imports: [BrowserModule],
+        declarations: [AppComponent, SecondComponent], 
+        providers:[
+            {provide: QuoteService, useClass: QuoteService}
+            ],  
+        bootstrap: [AppComponent]
+    })
+    
+    class AppModule {
+        
+    }
 
-app.AppModule = NgModule({
-    imports: [BrowserModule],
-    declarations: [AppComponent, SecondComponent], 
-    providers:[
-        {provide: QuoteService, useClass: QuoteService}
-        ],  
-    bootstrap: [AppComponent]
-})
-.Class({
-    constructor: function(){}
-})
+app.AppModule = AppModule;
 
 })(window.app || (window.app = {}));
