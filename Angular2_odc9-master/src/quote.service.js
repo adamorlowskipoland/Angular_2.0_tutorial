@@ -1,25 +1,22 @@
-(function(app){
-    
-    class QuoteService {
-        
-        constructor(){
-            this.quotes = quotes2;
-        }
-        
-        getRandomQuote(){
-            const randomIndex = Math.floor(Math.random() * this.quotes.length);
-            return this.quotes[randomIndex];
-        }
+//just QuoteService is exported, without quotes2 array
+export class QuoteService {
 
-        generateRandomQuotes(delay,callback){
-            callback(this.getRandomQuote());
-            setInterval( () => callback(this.getRandomQuote()), delay);
-        }
+    constructor(){
+        this.quotes = quotes2;
     }
-    
-    app.QuoteService = QuoteService;
 
- var quotes2 = [
+    getRandomQuote(){
+        const randomIndex = Math.floor(Math.random() * this.quotes.length);
+        return this.quotes[randomIndex];
+    }
+
+    generateRandomQuotes(delay,callback){
+        callback(this.getRandomQuote());
+        setInterval( () => callback(this.getRandomQuote()), delay);
+    }
+}
+
+ const quotes2 = [
     {
       "line": "Walking on water and developing software from a specification are easy if both are frozen.",
       "author": "Edward V Berard"
@@ -41,5 +38,3 @@
       "author": "Tom Cargill"
     }
   ];
-
-})(window.app || (window.app = {}));
